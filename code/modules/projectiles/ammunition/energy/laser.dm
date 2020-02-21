@@ -72,6 +72,3 @@
 /obj/item/ammo_casing/energy/laser/unstable
 	var/settable_damage = 0
 	projectile_type = /obj/item/projectile/beam/laser(settable_damage)
-
-/obj/item/ammo_casing/energy/laser/unstable/proc/add_damage(var/provided_damage)
-	settable_damage += provided_damage

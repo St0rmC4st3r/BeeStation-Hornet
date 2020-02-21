@@ -187,8 +187,3 @@
 
 /obj/item/projectile/beam/laser/unstable
 	damage = 0
-
-/obj/item/projectile/beam/laser/unstable/Initialize(var/settable_damage)
-	beam = /obj/item/projectile/beam/laser/unstable(src)
-	if(settable_damage)
-		beam.damage = settable_damage
