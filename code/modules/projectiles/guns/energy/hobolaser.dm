@@ -25,13 +25,8 @@
     var/damage = 0                      //damage to be set in the ammo casing. Because of the way the guns are coded.
     
 
-/obj/item/gun/energy/laser/improvised/proc/crank(mob/user/M)
-	if(!capacitor)
-		to_chat(M, "<span class='notice'>There is no capacitor installed!</span>")
-		return
-	if(!cell)
-		to_chat(M, "<span class='notice'>There is no power cell installed!</span>")
-		return
+/obj/item/gun/energy/laser/improvised/proc/crank(mob/living/user as M)
+	
 	var/user_incompetent = (!(M.Job in competent_personnel) && !(M.mind = owner))
 	var/transferable_charge = capacitor.rating*150 + (cell.charge/capacitor_capacity)*20 //Using a T1 capacitor with a bluespace cell is not the best idea idea.
 	var/consumable_charge = transferable_charge
@@ -54,4 +49,21 @@
 	if(chambered_charge>capacitor_capacity*1.5)
 		//TODO make_capacitor_explode and burn your ass.
 
-		
+/obj/item/gun/energy/laser/improvised/attack_self(mob/living/user as mob)
+	if(!capacitor)
+		to_chat(M, "<span class='notice'>There is no capacitor installed!</span>")
+		return
+	if(!cell)
+		to_chat(M, "<span class='notice'>There is no power cell installed!</span>")
+		return
+	crank(mob)
+
+/obj/item/gun/energy/laser/improvised/attackby(obj/item/I, mob/user, params)
+	..()
+	if(istype(A, /obj/item/stock_parts/capacitor))
+		if(!capacitor)
+			capacitor = A
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
