@@ -38,3 +38,14 @@
 		return
 	var/datum/material/ore = pick(ore_rates)
 	mat_container.insert_amount_mat((ore_rates[ore] * 1000), ore)
+
+/obj/machinery/computer/bluespace_miner
+	name = "bluespace miner contol console"
+	desc = "A console that is used to configure linked bluespace mining machines."
+	var/screen = "select"
+	var/obj/machinery/mineral/probe/probe //THERE CAN BE ONLY ONE!!!!
+	var/list/obj/machinery/mineral/bluespace_miner/miners
+
+/obj/machinery/computer/bluespace_miner/Initialize()
+	miners = list()
+	. = ..()
