@@ -1,26 +1,25 @@
-GLOBAL_LIST_INIT(bluespace_deposits, world.list())
+//GLOBAL_LIST_INIT(bluespace_deposits, world.list())
 
 //DON'T MINE BLUESPACE
 
 /datum/bluespace_ore_deposit
-	/datum/var/list/datum_components
 	var/x
 	var/y
 	var/special_deposit = FALSE
 	var/list/allowedmats
 	var/list/allowedmats_prob = list(
-		/datum/material/iron;30, 
-		/datum/material/glass;40, 
-		/datum/material/copper15, 
-		/datum/material/silver;12, 
-		/datum/material/gold;13, 
-		/datum/material/diamond;5, 			//WHAT THE FUCK IS CO2?!
-		/datum/material/plasma;20, 
-		/datum/material/uranium;10, 
-		/datum/material/bananium;0.001, 	//nope
-		/datum/material/titanium;11, 
-		/datum/material/bluespace;3, 		//DO NOT MINE
-		/datum/material/plastic;10			//we should be concerned about environmental pollution
+		/datum/material/iron=30, 
+		/datum/material/glass=40, 
+		/datum/material/copper=15, 
+		/datum/material/silver=12, 
+		/datum/material/gold=13, 
+		/datum/material/diamond=5, 			//WHAT THE FUCK IS CO2?!
+		/datum/material/plasma=20, 
+		/datum/material/uranium=10, 
+		/datum/material/bananium=0.001, 	//nope
+		/datum/material/titanium=11, 
+		/datum/material/bluespace=3, 		//DO NOT MINE
+		/datum/material/plastic=10			//we should be concerned about environmental pollution
 		)
 	var/oreammount_min = 2000 				//one ingot totally
 	var/oreammount_max = 10000
@@ -44,6 +43,7 @@ GLOBAL_LIST_INIT(bluespace_deposits, world.list())
 
 
 /datum/bluespace_ore_deposit/generate_ores()
+	return
 
 
 /datum/bluespace_ore_deposit/regular		//generic multimaterial deposit
@@ -78,7 +78,7 @@ GLOBAL_LIST_INIT(bluespace_deposits, world.list())
 
 
 /datum/bluespace_ore_deposit/pure			//contains only one type of resource. also smaller than regular.
-	allowedmats = list(pick(list(			//let's be somewhat generous
+	allowedmats = list(			//let's be somewhat generous
 		/datum/material/iron, 
 		/datum/material/glass, 
 		/datum/material/copper, 
@@ -88,15 +88,18 @@ GLOBAL_LIST_INIT(bluespace_deposits, world.list())
 		/datum/material/diamond,			//imagine the ammount of CO2 
 		/datum/material/uranium, 
 		/datum/material/titanium
-		)))
+		)
 	oreammount_min = 5000
 	oreammount_max = 50000
 	
 
-/datum/bluespace_ore_deposit/pure/proc/Initialize()
-	. = ..()
+/datum/bluespace_ore_deposit/pure/Initialize()
+	.=..()
+	allowedmats = list(pick(allowedmats))
 	if(!barren_rock_multiplyer)
 		barren_rock_multiplyer = rand(0, 0.6)
+	
+
 
 /datum/bluespace_ore_deposit/pure/small
 	oreammount_min = 500
@@ -117,9 +120,10 @@ GLOBAL_LIST_INIT(bluespace_deposits, world.list())
 	oreammount_max = 10000		//ohshit!
 	
 /datum/bluespace_ore_deposit/pure/bananium								
-allowedmats = list(/datum/material/bananium)
+	allowedmats = list(/datum/material/bananium)
 	oreammount_min = 100			
-	oreammount_max = 40000		
+	oreammount_max = 40000
+
 /datum/bluespace_ore_deposit/pure/fake									//miners will mine nothing while the probe will report minerals.
 	barren_rock_multiplyer = 1
 
@@ -128,8 +132,8 @@ allowedmats = list(/datum/material/bananium)
 
 
 /datum/bluespace_ore_deposit/spawner									//this may spawn something.
-	var/atom/special_spawnable
-	var/spawnable_ammount
+	var/list/special_spawnable
+	var/spawnable_ammount = 1
 
 /datum/bluespace_ore_deposit/spawner/snacks
 	allowedmats = list(/datum/material/plastic)	//wrappings
@@ -144,7 +148,7 @@ allowedmats = list(/datum/material/bananium)
 
 
 /datum/bluespace_ore_deposit/spawner/singularity						//can create a singulo.
-	special_spawnable = new /obj/singularity/singulo
+	special_spawnable = list(/obj/singularity)
 /datum/bluespace_ore_deposit/spawner/biological							//spawns a mob
 
 /datum/bluespace_ore_deposit/spawner/biological/dead_spessman			//was he exploring? fell out of a shuttle? forcibly spaced? who knows.
