@@ -6,8 +6,8 @@ GLOBAL_LIST_INIT(bluespace_deposits, subtypesof(/datum/bluespace_ore_deposit))
 	var/x
 	var/y
 	var/special_deposit = FALSE
-	var/list/allowedmats
-	var/list/mats_prob = list(
+	var/list/datum/material/allowedmats
+	var/list/datum/material/mats_prob = list(
 		/datum/material/iron=30, 
 		/datum/material/glass=40, 
 		/datum/material/copper=15, 
@@ -21,6 +21,7 @@ GLOBAL_LIST_INIT(bluespace_deposits, subtypesof(/datum/bluespace_ore_deposit))
 		/datum/material/bluespace=3, 		//DO NOT MINE
 		/datum/material/plastic=10			//we should be concerned about environmental pollution
 		)
+	var/list/datum/material/actual_mats
 	var/oreammount_min = 2000 				//one ingot totally
 	var/oreammount_max = 10000
 	var/oreammount
@@ -71,6 +72,10 @@ GLOBAL_LIST_INIT(bluespace_deposits, subtypesof(/datum/bluespace_ore_deposit))
 		/datum/material/titanium, 
 		/datum/material/bluespace, //DO NOT MINE
 		)
+/datum/bluespace_ore_deposit/regular/Initialize()
+	actual_mats = list(pick(allowedmats),pick(allowedmats),pick(allowedmats),pick(allowedmats),pick(allowedmats),pick(allowedmats),pick(allowedmats))
+	.=..()
+
 /datum/bluespace_ore_deposit/regular/small
 	oreammount_min = 1000
 	oreammount_max = 10000
@@ -91,7 +96,7 @@ GLOBAL_LIST_INIT(bluespace_deposits, subtypesof(/datum/bluespace_ore_deposit))
 
 /datum/bluespace_ore_deposit/pure			//contains only one type of resource. also smaller than regular.
 	allowedmats = list(			//let's be somewhat generous
-		/datum/material/iron=30, 
+		/datum/material/iron, 
 		/datum/material/glass, 
 		/datum/material/copper, 
 		/datum/material/plasma,
@@ -107,7 +112,7 @@ GLOBAL_LIST_INIT(bluespace_deposits, subtypesof(/datum/bluespace_ore_deposit))
 
 /datum/bluespace_ore_deposit/pure/Initialize()
 	.=..()
-	allowedmats = list(pick(allowedmats))
+	actual_mats = list(pick(allowedmats))
 	if(!barren_rock_multiplyer)
 		barren_rock_multiplyer = rand(0, 0.6)
 	
@@ -138,10 +143,13 @@ GLOBAL_LIST_INIT(bluespace_deposits, subtypesof(/datum/bluespace_ore_deposit))
 
 /datum/bluespace_ore_deposit/pure/fake									//miners will mine nothing while the probe will report minerals.
 	barren_rock_multiplyer = 1
+	oreammount_min = 100			
+	oreammount_max = 200000												//we don't really care.
 
 /datum/bluespace_ore_deposit/pure/plastic								//nuff said
 	allowedmats = list(/datum/material/plastic)
-
+	oreammount_min = 500
+	oreammount_max = 10000
 
 /datum/bluespace_ore_deposit/spawner									//this may spawn something.
 	var/list/special_spawnable

@@ -63,17 +63,30 @@
 	//Actually just adds new deposits to the GLOB.bluespace_deposits if they are insufficient.
 	var/scanning_cooldown = 3000	//every 5 minutes
 	var/next_cooldown
-	var/list/bluespace_ore_deposit/last_major_change
-	var/list/bluespace_ore_deposit/last_check
+	var/list/bluespace_ore_deposit/deposit_probs = list(
+		/datum/bluespace_ore_deposit/regular/small,
+		/datum/bluespace_ore_deposit/regular/medium,
+		/datum/bluespace_ore_deposit/regular/large,
+		/datum/bluespace_ore_deposit/regular/very_large,
+		/datum/bluespace_ore_deposit/pure/small,
+		/datum/bluespace_ore_deposit/pure/medium,
+		/datum/bluespace_ore_deposit/pure/large,
+		/datum/bluespace_ore_deposit/pure/bluespace,
+		/datum/bluespace_ore_deposit/pure/bananium,
+		/datum/bluespace_ore_deposit/pure/fake,
+		/datum/bluespace_ore_deposit/pure/plastic,
+		/datum/bluespace_ore_deposit/spawner/snacks)
+	var/list/bluespace_ore_deposit/last_major_change = list()
+	var/list/bluespace_ore_deposit/last_check = list()
 
 /obj/machinery/bluespace_deposit_spawner/Initialize()
 
-/obj/machinery/bluespace_deposit_spawner/proc/deposit_checkup()
-	if(length(GLOB.bluespace_deposits)<length(last_check))
+/obj/machinery/bluespace_deposit_spawner/proc/deposit_checkup(var/list/bluespace_ore_deposit/mjc, var/list/bluespace_ore_deposit/lc)
+	if(length(GLOB.bluespace_deposits)<length(lc))
 		if(prob(33))
 			spawn_new_deposit()
-		last_check = GLOB.bluespace_deposits
-	if(length(GLOB.bluespace_deposits)<length(last_major_change)-10)
+		lc = GLOB.bluespace_deposits
+	if(length(GLOB.bluespace_deposits)<length(mjc)-10)
 		major_change_action()
 
 /obj/machinery/bluespace_deposit_spawner/proc/major_change_action()
