@@ -49,3 +49,33 @@
 /obj/machinery/computer/bluespace_miner/Initialize()
 	miners = list()
 	. = ..()
+
+
+/obj/machinery/bluespace_probe
+	name = "bluespace deposit probe"
+	desc = "Used to probe bluespace for ore deposits. Nanotrasen should definitely invest in some better equipment. "
+
+
+
+/obj/machinery/bluespace_deposit_spawner
+	name = "bluespace deposit radar"
+	desc = "A machine that makes new bluespace deposits opaque to the probes. DO NOT REMOVE."
+	//Actually just adds new deposits to the GLOB.bluespace_deposits if they are insufficient.
+	var/scanning_cooldown = 3000	//every 5 minutes
+	var/next_cooldown
+	var/list/bluespace_ore_deposit/last_major_change
+	var/list/bluespace_ore_deposit/last_check
+
+/obj/machinery/bluespace_deposit_spawner/Initialize()
+
+/obj/machinery/bluespace_deposit_spawner/proc/deposit_checkup()
+	if(length(GLOB.bluespace_deposits)<length(last_check))
+		if(prob(33))
+			spawn_new_deposit()
+		last_check = GLOB.bluespace_deposits
+	if(length(GLOB.bluespace_deposits)<length(last_major_change)-10)
+		major_change_action()
+
+/obj/machinery/bluespace_deposit_spawner/proc/major_change_action()
+
+/obj/machinery/bluespace_deposit_spawner/proc/spawn_new_deposit() 

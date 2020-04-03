@@ -1,4 +1,4 @@
-//GLOBAL_LIST_INIT(bluespace_deposits, world.list())
+GLOBAL_LIST_INIT(bluespace_deposits, subtypesof(/datum/bluespace_ore_deposit))
 
 //DON'T MINE BLUESPACE
 
@@ -7,7 +7,7 @@
 	var/y
 	var/special_deposit = FALSE
 	var/list/allowedmats
-	var/list/allowedmats_prob = list(
+	var/list/mats_prob = list(
 		/datum/material/iron=30, 
 		/datum/material/glass=40, 
 		/datum/material/copper=15, 
@@ -26,11 +26,12 @@
 	var/oreammount
 	var/oreammount_estimated_total
 	var/barren_rock_multiplyer = 0			//makes mining slower
+	var/datum/component/material_container/ores
 
 
 /datum/bluespace_ore_deposit/proc/Initialize()
 	oreammount = rand(oreammount_min, oreammount_max)
-	oreammount_estimated_total = oreammount + rand(oreammount*-0.5, oreammount*1.5)
+	oreammount_estimated_total = oreammount + round(rand(oreammount*-0.5, oreammount*1.5))
 	AddComponent(/datum/component/material_container,
 	allowedmats,
 	INFINITY,
@@ -42,7 +43,18 @@
 	generate_ores()
 
 
-/datum/bluespace_ore_deposit/generate_ores()
+/datum/bluespace_ore_deposit/proc/generate_ores()
+	var/ore_unsorted_left = oreammount
+	var/portion = round(ore_unsorted_left/100)
+	var/datum/material/current_ore
+	while(ore_unsorted_left > 0)
+		current_ore = pick(mats_prob)
+		if(current_ore in allowedmats)
+			if(portion>ore_unsorted_left)
+				portion = ore_unsorted_left
+			ores.insert_amount_mat(portion, current_ore)
+			ore_unsorted_left -= portion
+
 	return
 
 
@@ -79,7 +91,7 @@
 
 /datum/bluespace_ore_deposit/pure			//contains only one type of resource. also smaller than regular.
 	allowedmats = list(			//let's be somewhat generous
-		/datum/material/iron, 
+		/datum/material/iron=30, 
 		/datum/material/glass, 
 		/datum/material/copper, 
 		/datum/material/plasma,
@@ -110,7 +122,7 @@
 	oreammount_max = 50000
 
 /datum/bluespace_ore_deposit/pure/large
-	oreammount_min = 10000
+	oreammount_min = 20000
 	oreammount_max = 100000
 
 
