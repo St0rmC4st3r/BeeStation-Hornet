@@ -37,6 +37,24 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "space_near"
 	dynamic_lighting = DYNAMIC_LIGHTING_IFSTARLIGHT
 
+/area/snowplanet			//It is like space, but it is actually not
+	icon_state = "space"	//TODO change
+	requires_power = TRUE
+	always_unpowered = TRUE
+	power_light = FALSE
+	power_equip = FALSE
+	power_environ = FALSE
+	valid_territory = FALSE
+	outdoors = TRUE
+	ambientsounds = SPACE
+	blob_allowed = FALSE //Eating up space doesn't count for victory as a blob.
+
+//Look at me, ma! I'm like uncle Lavaland!
+
+/area/snowplanet/nearstation
+
+/area/snowplanet/wilderness
+
 /area/start
 	name = "start area"
 	icon_state = "start"
