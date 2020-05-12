@@ -156,7 +156,7 @@
 #define OPENTURF_LOW_PRESSURE		"o2=14;n2=30;TEMP=293.15"
 #define TCOMMS_ATMOS				"n2=100;TEMP=80" //-193,15°C telecommunications. also used for xenobiology slime killrooms
 #define AIRLESS_ATMOS				"TEMP=2.7" //space
-#define FROZEN_ATMOS				"o2=22;n2=82;TEMP=180" //-93.15°C snow and ice turfs
+#define FROZEN_ATMOS				"o2=33;n2=122;TEMP=180" //-93.15°C snow and ice turfs
 #define KITCHEN_COLDROOM_ATMOS		"o2=33;n2=124;TEMP=193.15" //-80°C kitchen coldroom; higher amount of mol to reach about 101.3 kpA
 #define BURNMIX_ATMOS				"o2=2500;plasma=5000;TEMP=370" //used in the holodeck burn test program
 
