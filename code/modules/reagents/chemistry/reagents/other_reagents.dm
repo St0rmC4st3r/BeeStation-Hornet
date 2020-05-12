@@ -1877,6 +1877,12 @@
 		var/datum/antagonist/changeling/changeling = L.mind.has_antag_datum(/datum/antagonist/changeling)
 		if(changeling)
 			changeling.chem_charges = max(changeling.chem_charges-2, 0)
+		else if(is_species(L, /datum/species/lizard/ashwalker))	//No changeling ashwalker shenanigans.
+			L.reagents.remove_reagent(/datum/reagent/bz_metabolites,5)
+			L.adjustToxLoss(-0.3*REM, 0)
+			L.adjustOxyLoss(-0.3*REM, 0)
+			L.adjustBruteLoss(-0.3*REM, 0)
+			L.adjustFireLoss(-0.3*REM, 0)
 	return ..()
 
 /datum/reagent/concentrated_bz

@@ -28,6 +28,7 @@
 	var/SA_para_min = 1 //Sleeping agent
 	var/SA_sleep_min = 5 //Sleeping agent
 	var/BZ_trip_balls_min = 1 //BZ gas
+	var/BZ_is_harmless = FALSE
 	var/gas_stimulation_min = 0.002 //Nitryl and Stimulum
 
 	var/oxy_breath_dam_min = MIN_TOXIC_GAS_DAMAGE
@@ -107,10 +108,18 @@
 	//Too much oxygen! //Yes, some species may not like it.
 	if(safe_oxygen_max)
 		if(O2_pp > safe_oxygen_max)
-			var/ratio = (breath_gases[/datum/gas/oxygen][MOLES]/safe_oxygen_max) * 10
-			H.apply_damage_type(CLAMP(ratio, oxy_breath_dam_min, oxy_breath_dam_max), oxy_damage_type)
+			if(!H.o2overloadtime)
+				H.o2overloadtime = world.time
+			else if(world.time - H.o2overloadtime > 120)
+				H.Dizzy(10) //An inital warning to get out of the area
+				H.adjustOxyLoss(3)
+				if(world.time - H.o2overloadtime > 300)
+					H.adjustOxyLoss(8)
+			if(prob(20))
+				H.emote("cough")
 			H.throw_alert("too_much_oxy", /obj/screen/alert/too_much_oxy)
 		else
+			H.o2overloadtime = 0
 			H.clear_alert("too_much_oxy")
 
 	//Too little oxygen!
@@ -138,6 +147,7 @@
 			var/ratio = (breath_gases[/datum/gas/nitrogen][MOLES]/safe_nitro_max) * 10
 			H.apply_damage_type(CLAMP(ratio, nitro_breath_dam_min, nitro_breath_dam_max), nitro_damage_type)
 			H.throw_alert("too_much_nitro", /obj/screen/alert/too_much_nitro)
+			H.losebreath +=2
 		else
 			H.clear_alert("too_much_nitro")
 
@@ -249,13 +259,16 @@
 
 		var/bz_pp = breath.get_breath_partial_pressure(breath_gases[/datum/gas/bz][MOLES])
 		if(bz_pp > BZ_trip_balls_min)
-			H.hallucination += 10
+			if(!BZ_is_harmless)
+				H.hallucination += 10
+				if(prob(33))
+					H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
 			H.reagents.add_reagent(/datum/reagent/bz_metabolites,5)
-			if(prob(33))
-				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
+			
 
 		else if(bz_pp > 0.01)
-			H.hallucination += 5
+			if(!BZ_is_harmless)
+				H.hallucination += 5
 			H.reagents.add_reagent(/datum/reagent/bz_metabolites,1)
 
 
@@ -444,11 +457,30 @@
 	icon_state = "lungs-c-u"
 	safe_toxins_max = 20
 	safe_co2_max = 20
+	safe_oxygen_max = 250
 	maxHealth = 2 * STANDARD_ORGAN_THRESHOLD
 
 	cold_level_1_threshold = 200
 	cold_level_2_threshold = 140
 	cold_level_3_threshold = 100
+
+/obj/item/organ/lungs/ashwalker
+	name = "ash lungs"
+	desc = "blackened lungs identical from specimens recovered from lavaland, unsuited to higher air pressures."
+	icon_state = "lungs-ll"
+	safe_oxygen_min = 3	//able to handle much thinner oxygen, something something ash storm adaptation
+	safe_oxygen_max = 18 // Air standard is 22kpA of O2, LL varies depending on the round
+	safe_nitro_max = 30 // Air standard is 82kpA of N2, LL varies depending on the round
+	safe_toxins_max = 1 // Living in an enviorment with plasma in the air has its advantages
+	safe_co2_max = 20
+	BZ_is_harmless = TRUE
+
+	cold_level_1_threshold = 300 // Ash Lizards can't take the cold very well, station air is only just warm enough
+	cold_level_2_threshold = 260
+	cold_level_3_threshold = 240
+
+	heat_level_1_threshold = 400 // better adapted for heat, obv. Lavaland standard is 300
+	heat_level_2_threshold = 600 // up 200 from level 1, 1000 is silly but w/e for level 3
 
 obj/item/organ/lungs/apid
 	name = "apid lungs"
