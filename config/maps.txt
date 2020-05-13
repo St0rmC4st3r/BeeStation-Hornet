@@ -53,3 +53,8 @@ map kilostation
 	votable
 	disabled
 endmap
+
+map perspectivestation
+	maxplayers 80
+	votable
+endmap
