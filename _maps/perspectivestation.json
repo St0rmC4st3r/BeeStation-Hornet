@@ -1,17 +1,17 @@
 {
-	"map_name": "Frozen Station",
-	"map_path": "map_files/PerspectiveStation",
-	"map_file": "PerspectiveStation512.dmm",
-	"shuttles": {
-		"cargo": "cargo_box",
-		"ferry": "ferry_fancy",
-		"whiteship": "whiteship_box",
-		"emergency": "emergency_box"
-	}
-	"traits": {
-		"Gravity":true,
-		"Linkage":null,
-		"Weather_Snowstorm":true,
-		"Baseturf":"/turf/open/floor/plating/asteroid/snow"
-		}
-	}
+    "map_name": "Frozen Station",
+    "map_path": "map_files/PerspectiveStation",
+    "map_file": "PerspectiveStation512.dmm",
+    "shuttles": {
+        "cargo": "cargo_box",
+        "ferry": "ferry_fancy",
+        "whiteship": "whiteship_box",
+        "emergency": "emergency_box"
+    },
+    "traits": [{
+        "Gravity": true,
+        "Linkage": null,
+        "Weather_Snowstorm": true,
+        "Baseturf": "/turf/open/floor/plating/asteroid/snow"
+    }]
+    }
