@@ -1,4 +1,33 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
+"b" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/sign/warning/vacuum,
+/turf/open/floor/plating,
+/area/quartermaster/storage)
+"c" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
+"d" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
 "e" = (
 /turf/open/floor/plating/asteroid/snow,
 /area/snowplanet)
@@ -9,6 +38,26 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"g" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
+/obj/machinery/door/airlock/external{
+	name = "Supply Dock Airlock";
+	req_access_txt = "31"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/quartermaster/storage)
 "h" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -28,6 +77,16 @@
 "k" = (
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"l" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 2
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/caution/stand_clear,
+/turf/open/floor/plasteel,
+/area/quartermaster/storage)
 "m" = (
 /obj/machinery/power/apc/auto_name/north,
 /obj/machinery/power/terminal{
@@ -38,6 +97,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"n" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "cargounload"
+	},
+/obj/structure/plasticflaps,
+/turf/open/floor/plating,
+/area/quartermaster/storage)
 "o" = (
 /obj/machinery/power/port_gen,
 /obj/structure/cable/yellow,
@@ -45,44 +112,285 @@
 /obj/item/stack/sheet/mineral/plasma/fifty,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"p" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor_switch/oneway{
+	dir = 8;
+	id = "cargounload"
+	},
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/quartermaster/storage)
+"q" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/white,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/quartermaster/storage)
+"r" = (
+/obj/machinery/button/door{
+	dir = 2;
+	id = "cargounload";
+	layer = 4;
+	name = "Loading Doors";
+	pixel_x = 24;
+	pixel_y = 8
+	},
+/obj/machinery/button/door{
+	id = "cargoload";
+	layer = 4;
+	name = "Loading Doors";
+	pixel_x = 24;
+	pixel_y = -8
+	},
+/obj/machinery/computer/cargo{
+	dir = 8
+	},
+/obj/machinery/camera{
+	c_tag = "Cargo Bay - Starboard";
+	dir = 8;
+	name = "cargo camera"
+	},
+/obj/effect/turf_decal/bot,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/quartermaster/storage)
 "s" = (
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"t" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/quartermaster/storage)
+"u" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
 "v" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"w" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 1
+	},
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
+"x" = (
+/turf/closed/wall/ice,
+/area/snowplanet)
 "y" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"z" = (
+/obj/effect/turf_decal/caution/stand_clear,
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
+"A" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 4
+	},
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
+"B" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel,
+/area/quartermaster/storage)
+"C" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/white,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/quartermaster/storage)
+"D" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor_switch/oneway{
+	id = "cargoload"
+	},
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/quartermaster/storage)
+"E" = (
+/obj/machinery/status_display/supply,
+/turf/closed/wall,
+/area/quartermaster/storage)
+"G" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "cargoload"
+	},
+/obj/structure/plasticflaps,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/quartermaster/storage)
+"H" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "cargounload"
+	},
+/turf/open/floor/plating,
+/area/quartermaster/storage)
+"I" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor{
+	dir = 5;
+	id = "cargoload"
+	},
+/turf/open/floor/plating,
+/area/quartermaster/storage)
+"J" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
 "K" = (
 /obj/machinery/light{
 	dir = 1
 	},
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"L" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/docking_port/stationary{
+	dir = 4;
+	dwidth = 4;
+	height = 7;
+	id = "supply_home";
+	name = "Cargo Bay";
+	width = 12
+	},
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
+"M" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor{
+	dir = 9;
+	id = "cargounload"
+	},
+/turf/open/floor/plating,
+/area/quartermaster/storage)
+"N" = (
+/obj/machinery/conveyor{
+	dir = 4;
+	id = "cargoload"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor{
+	id = "cargoload";
+	name = "supply dock loading door"
+	},
+/turf/open/floor/plating,
+/area/quartermaster/storage)
+"O" = (
+/obj/machinery/conveyor{
+	dir = 8;
+	id = "cargounload"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/poddoor{
+	id = "cargounload";
+	name = "supply dock unloading door"
+	},
+/turf/open/floor/plating,
+/area/quartermaster/storage)
+"P" = (
+/obj/machinery/conveyor{
+	dir = 1;
+	id = "cargoload"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/quartermaster/storage)
+"Q" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/quartermaster/storage)
 "R" = (
-/obj/structure/fans/tiny,
-/turf/open/floor/plating/asteroid/snow,
+/turf/open/floor/plating/snowed/smoothed,
 /area/snowplanet)
 "S" = (
 /turf/closed/wall/ice,
 /area/engine/engineering)
+"T" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
 "U" = (
 /obj/machinery/door/airlock/glass_large,
 /obj/structure/fans/tiny,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"V" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
 "W" = (
 /obj/effect/landmark/start/captain,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
+"X" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 8
+	},
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
+"Y" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 2
+	},
+/turf/open/floor/plating/snowed/smoothed,
+/area/snowplanet)
+"Z" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/quartermaster/storage)
 
 (1,1,1) = {"
 j
@@ -128837,9 +129145,9 @@ e
 e
 e
 e
-R
-R
-R
+e
+e
+e
 e
 e
 e
@@ -136035,14 +136343,14 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
-e
+x
+x
+x
+x
+x
+x
+x
+x
 e
 e
 e
@@ -136556,7 +136864,7 @@ e
 e
 e
 e
-e
+x
 e
 e
 e
@@ -137070,7 +137378,7 @@ e
 e
 e
 e
-e
+x
 e
 e
 e
@@ -137584,7 +137892,7 @@ e
 e
 e
 e
-e
+x
 e
 e
 e
@@ -138098,7 +138406,7 @@ e
 e
 e
 e
-e
+x
 e
 e
 e
@@ -138605,14 +138913,14 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
-e
+x
+x
+x
+x
+x
+x
+x
+x
 e
 e
 e
@@ -147342,13 +147650,13 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
+p
+t
+t
+Z
+Z
+t
+D
 e
 e
 e
@@ -147856,13 +148164,13 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
+H
+M
+B
+r
+B
+I
+P
 e
 e
 e
@@ -148370,13 +148678,13 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
+b
+n
+l
+E
+l
+G
+b
 e
 e
 e
@@ -148881,20 +149189,20 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
+R
+R
+X
+Q
+O
+g
+C
+g
+N
+q
+R
+X
+R
+R
 e
 e
 e
@@ -149395,20 +149703,20 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
+R
+J
+V
+V
+V
+L
+V
+V
+V
+V
+V
+V
+T
+R
 e
 e
 e
@@ -149909,20 +150217,20 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
+w
+d
+R
+R
+R
+R
+R
+R
+R
+R
+R
+R
+Y
+z
 e
 e
 e
@@ -150423,20 +150731,20 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
+R
+d
+R
+R
+R
+R
+R
+R
+R
+R
+R
+R
+Y
+R
 e
 e
 e
@@ -150937,20 +151245,20 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
+R
+d
+R
+R
+R
+R
+R
+R
+R
+R
+R
+R
+Y
+R
 e
 e
 e
@@ -151451,20 +151759,20 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
+R
+d
+R
+R
+R
+R
+R
+R
+R
+R
+R
+R
+Y
+R
 e
 e
 e
@@ -151965,20 +152273,20 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
+w
+d
+R
+R
+R
+R
+R
+R
+R
+R
+R
+R
+Y
+z
 e
 e
 e
@@ -152479,20 +152787,20 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
+R
+c
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+u
+R
 e
 e
 e
@@ -152993,20 +153301,20 @@ e
 e
 e
 e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
-e
+R
+R
+A
+R
+R
+A
+R
+R
+A
+R
+R
+A
+R
+R
 e
 e
 e
