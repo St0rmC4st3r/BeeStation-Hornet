@@ -53,13 +53,20 @@
 		wires.interact(user)
 
 /obj/item/grenade/chem_grenade/attackby(obj/item/I, mob/user, params)
+	var/reagent_string = ""
+	var/beaker_number = 1
 	if(istype(I,/obj/item/assembly) && stage == GRENADE_WIRED)
 		wires.interact(user)
 	if(I.tool_behaviour == TOOL_SCREWDRIVER)
 		if(stage == GRENADE_WIRED)
 			if(beakers.len)
+				for(var/obj/grenade_beakers in beakers)
+					if(!grenade_beakers.reagents)
+						continue
+					reagent_string += " ([grenade_beakers.name] [beaker_number++] : " + pretty_string_from_reagent_list(grenade_beakers.reagents.reagent_list) + ");"
 				stage_change(GRENADE_READY)
 				to_chat(user, "<span class='notice'>You lock the [initial(name)] assembly.</span>")
+				investigate_log("[user] have secured a grenade casing [src] containing:[reagent_string].", INVESTIGATE_GRENADES)
 				I.play_tool_sound(src, 25)
 			else
 				to_chat(user, "<span class='warning'>You need to add at least one beaker before locking the [initial(name)] assembly!</span>")
@@ -85,6 +92,7 @@
 				if(!user.transferItemToLoc(I, src))
 					return
 				to_chat(user, "<span class='notice'>You add [I] to the [initial(name)] assembly.</span>")
+				investigate_log("[user] have added a reagent container [I] containing:[pretty_string_from_reagent_list(I.reagents.reagent_list)] into [src].", INVESTIGATE_GRENADES)
 				beakers += I
 				var/reagent_list = pretty_string_from_reagent_list(I.reagents)
 				user.log_message("inserted [I] ([reagent_list]) into [src]",LOG_GAME)
@@ -104,6 +112,7 @@
 	else if(stage == GRENADE_READY && I.tool_behaviour == TOOL_WIRECUTTER && !active)
 		stage_change(GRENADE_WIRED)
 		to_chat(user, "<span class='notice'>You unlock the [initial(name)] assembly.</span>")
+		investigate_log("[user] have unwired [src] with wirecutters.", INVESTIGATE_GRENADES)
 
 	else if(stage == GRENADE_WIRED && I.tool_behaviour == TOOL_WRENCH)
 		if(beakers.len)
@@ -115,6 +124,7 @@
 				user.log_message("removed [O] ([reagent_list]) from [src]", LOG_GAME)
 			beakers = list()
 			to_chat(user, "<span class='notice'>You open the [initial(name)] assembly and remove the payload.</span>")
+			investigate_log("[user] have removed the beakers from [src] with a wrench.", INVESTIGATE_GRENADES)
 			wires.detach_assembly(wires.get_wire(1))
 			return
 		new /obj/item/stack/cable_coil(get_turf(src),1)

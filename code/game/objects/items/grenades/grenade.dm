@@ -62,6 +62,7 @@
 
 /obj/item/grenade/proc/log_grenade(mob/user, turf/T)
 	log_bomber(user, "has primed a", src, "for detonation")
+	investigate_log("[user] has primed a [src], for detonation", INVESTIGATE_GRENADES)
 
 /obj/item/grenade/proc/preprime(mob/user, delayoverride, msg = TRUE, volume = 60)
 	var/turf/T = get_turf(src)
@@ -111,6 +112,7 @@
 		owner.visible_message("<span class='danger'>[attack_text] hits [owner]'s [src], setting it off! What a shot!</span>")
 		var/turf/T = get_turf(src)
 		log_game("A projectile ([hitby]) detonated a grenade held by [key_name(owner)] at [COORD(T)]")
+		investigate_log("A projectile ([hitby]) detonated a grenade held by [key_name(owner)] at [COORD(T)]", INVESTIGATE_GRENADES)
 		message_admins("A projectile ([hitby]) detonated a grenade held by [key_name_admin(owner)] at [ADMIN_COORDJMP(T)]")
 		prime()
 		return TRUE //It hit the grenade, not them

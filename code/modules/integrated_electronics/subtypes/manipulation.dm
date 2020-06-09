@@ -231,6 +231,7 @@
 		addtimer(CALLBACK(attached_grenade, /obj/item/grenade.proc/prime), dt)
 		var/atom/holder = loc
 		message_admins("activated a grenade assembly. Last touches: Assembly: [holder.fingerprintslast] Circuit: [fingerprintslast] Grenade: [attached_grenade.fingerprintslast]")
+		investigate_log("activated a grenade assembly. Last touches: Assembly: [holder.fingerprintslast] Circuit: [fingerprintslast] Grenade: [attached_grenade.fingerprintslast]. Assembly reference: [REF(src)].", INVESTIGATE_GRENADES)
 
 // These procs do not relocate the grenade, that's the callers responsibility
 /obj/item/integrated_circuit/manipulation/grenade/proc/attach_grenade(var/obj/item/grenade/G)
