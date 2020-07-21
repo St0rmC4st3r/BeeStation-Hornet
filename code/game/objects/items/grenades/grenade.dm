@@ -62,7 +62,7 @@
 
 /obj/item/grenade/proc/log_grenade(mob/user, turf/T)
 	log_bomber(user, "has primed a", src, "for detonation")
-	investigate_log("[user] has primed a [src], for detonation", INVESTIGATE_GRENADES)
+	investigate_log(" has been primed for detonation by [user] at", INVESTIGATE_GRENADES)
 
 /obj/item/grenade/proc/preprime(mob/user, delayoverride, msg = TRUE, volume = 60)
 	var/turf/T = get_turf(src)
