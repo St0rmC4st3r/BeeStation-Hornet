@@ -92,6 +92,8 @@
 	var/core_amount = 1 // How many cores you'll get when harvesting, default 1 on nodes
 	var/slimecolor = "grey" // Node's current color, determines core type on init
 	var/mutation_chance // Unsure how to use yet, probably implemented when creating nodes is
+	//I propose to scrap the previous 4 lines, since we are offloading everything in just one separate datum for the easy of assignment.
+	var/datum/slimecolor/node_color	//not assigning yet. We should wait for an extract. If the extract dosn't come, we pick the owner core's possible mutations.
 
 	//var/maxhunger //Not sure if we want a hunger system or not, I'll put this here
 	//var/currenthunger // To keep it simple, would go down by 1 a tick. Adjust maxhunger accordingly (rates are unnessecarily hard to keep track of)
