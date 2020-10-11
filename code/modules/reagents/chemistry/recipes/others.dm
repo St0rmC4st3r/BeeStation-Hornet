@@ -547,6 +547,17 @@
 	results = list(/datum/reagent/drying_agent = 3)
 	required_reagents = list(/datum/reagent/stable_plasma = 2, /datum/reagent/consumable/ethanol = 1, /datum/reagent/sodium = 1)
 
+/datum/chemical_reaction/water_evaporation
+	name = "Water evaporation"
+	id = "water_evaporation"
+	required_temp = 374
+	required_reagents = list(/datum/reagent/water = 1)
+
+/datum/chemical_reaction/water_evaporation/on_reaction(datum/reagents/holder, created_volume)
+	var/turf/location = get_turf(holder.my_atom)
+	var/temp = holder.chem_temp
+	location.atmos_spawn_air("water_vapor=[created_volume];TEMP=[temp]")
+
 //////////////////////////////////// Other goon stuff ///////////////////////////////////////////
 
 /datum/chemical_reaction/acetone
