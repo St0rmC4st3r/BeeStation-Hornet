@@ -146,3 +146,13 @@
 			C.cremate(usr)
 
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 50)
+
+/obj/item/assembly/control/supermatter
+	name = "supermatter engine safety controller"
+	desc = "Once activated, there's no turning back."
+
+/obj/item/assembly/control/crematorium/activate()
+	if(!GLOB.main_supermatter_engine)
+		return
+	for (var/obj/machinery/power/supermatter_crystal/C in GLOB.main_supermatter_engine)
+		C.disable_safety("standard disengagement procedure")

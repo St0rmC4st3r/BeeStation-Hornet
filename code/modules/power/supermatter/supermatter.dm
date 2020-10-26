@@ -75,7 +75,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	desc = "A strangely translucent and iridescent crystal."
 	icon = 'icons/obj/supermatter.dmi'
 	icon_state = "darkmatter"
-	layer = ABOVE_MOB_LAYER
+	layer = 4
 	density = TRUE
 	anchored = TRUE
 	var/uid = 1
@@ -149,6 +149,8 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	//for logging
 	var/has_been_powered = FALSE
 	var/has_reached_emergency = FALSE
+	var/safety_enabled = FALSE
+	var/image/safety_field = null
 
 	// For making hugbox supermatter
 	var/takes_damage = TRUE
@@ -175,9 +177,12 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	radio.keyslot = new radio_key
 	radio.listening = 0
 	radio.recalculateChannels()
+	safety_field = image(icon, null, "causality_field")	//would be nice if someone sprited something else
 	investigate_log("has been created.", INVESTIGATE_SUPERMATTER)
 	if(is_main_engine)
 		GLOB.main_supermatter_engine = src
+		enable_safety()
+
 
 	AddElement(/datum/element/bsa_blocker)
 	RegisterSignal(src, COMSIG_ATOM_BSA_BEAM, .proc/call_explode)
@@ -314,8 +319,30 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 /obj/machinery/power/supermatter_crystal/proc/call_explode()
 	explode()
 
+/obj/machinery/power/supermatter_crystal/proc/enable_safety()		//should not normally be called
+	if(safety_enabled)
+		return
+	add_overlay(safety_field, TRUE)
+	safety_enabled = TRUE
+
+/obj/machinery/power/supermatter_crystal/proc/disable_safety(var/reason)
+	if(!safety_enabled)
+		return
+	cut_overlay(safety_field, TRUE)
+	radio.talk_into(src, "[src] atmospheric safety field has been disengaged.", engineering_channel)
+	visible_message("<span class='warning'>[src]'s safety field fades away.</span>")
+	playsound(src, 'sound/machines/supermatter_activate.ogg', 100)
+	safety_enabled = FALSE
+
+	investigate_log("safety field has been disabled due to [reason].", INVESTIGATE_SUPERMATTER)
+	message_admins("[src] safety field has been disabled due to [reason] [ADMIN_JMP(src)].")
+
+
 /obj/machinery/power/supermatter_crystal/process_atmos()
 	var/turf/T = loc
+
+	if(safety_enabled)	//we don't process any atmos before safety is removed
+		return
 
 	if(isnull(T))		// We have a null turf...something is wrong, stop processing this entity.
 		return PROCESS_KILL
@@ -537,6 +564,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 			has_been_powered = TRUE
 	else if(takes_damage)
 		damage += Proj.damage * config_bullet_energy
+	disable_safety("bullet act")
 	return BULLET_ACT_HIT
 
 /obj/machinery/power/supermatter_crystal/singularity_act()
@@ -661,8 +689,10 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 				scalpel.usesLeft--
 				if (!scalpel.usesLeft)
 					to_chat(user, "<span class='notice'>A tiny piece of \the [W] falls off, rendering it useless!</span>")
+				disable_safety("sliver extraction")
 			else
 				to_chat(user, "<span class='notice'>You fail to extract a sliver from \The [src]. \the [W] isn't sharp enough anymore!</span>")
+
 	else if(user.dropItemToGround(W))
 		user.visible_message("<span class='danger'>As [user] touches \the [src] with \a [W], silence fills the room...</span>",\
 			"<span class='userdanger'>You touch \the [src] with \the [W], and everything suddenly goes silent.</span>\n<span class='notice'>\The [W] flashes into dust as you flinch away from \the [src].</span>",\
@@ -719,6 +749,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 		qdel(AM)
 	if(!iseffect(AM))
 		matter_power += 200
+	disable_safety("[AM] being consumed")
 
 	//Some poor sod got eaten, go ahead and irradiate people nearby.
 	radiation_pulse(src, 3000, 2, TRUE)

@@ -154,7 +154,6 @@
 
 	if((stat & (NOPOWER|BROKEN)))
 		return
-
 	if(device && device.next_activate > world.time)
 		return
 
@@ -277,6 +276,15 @@
 
 /obj/machinery/button/crematorium/indestructible
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/machinery/button/supermatter
+	name = "supermatter safety controller"
+	desc = "Burn baby burn!"
+	icon_state = "launcher"
+	skin = "launcher"
+	device_type = /obj/item/assembly/control/supermatter
+	req_access = list(ACCESS_ENGINE)
+	id = 1
 
 /obj/item/wallframe/button
 	name = "button frame"
