@@ -1525,3 +1525,35 @@
 	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 0.5)
 	..()
 	. = 1
+
+/datum/reagent/medicine/brandmed
+	name = "Certified organic compound"
+	description = "Complex organic compound. Sequential signature certifies this as some kind of medical reagent. Further analysis unavaliable."
+
+/datum/reagent/medicine/brandmed/saliriboacid
+	name = "SRP compound"
+	description = "Salicyclic Ribonucleic Polymer (tm). Certified organic modification of Salicyclic Acid. Further analysis unavaliable."
+	reagent_state = LIQUID
+	color = "#D2D2D2"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 25
+
+/datum/reagent/medicine/brandmed/saliriboacid/on_mob_life(mob/living/carbon/M)
+	M.adjustCloneLoss(2, 0)	//was it worth it?
+	if(prob(5))
+			to_chat(M, "<span class = 'warning'>You feel your cells burn.</span>")
+
+	if(M.getBruteLoss() > 50)	//like regular sali acid, but a bit faster
+		M.adjustBruteLoss(-7*REM, 0)
+	else
+		M.adjustBruteLoss(-0.3*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/medicine/brandmed/saliriboacid/overdose_process(mob/living/M)
+	M.adjustCloneLoss(5, 0)	//was it worth it?
+	if(prob(5))
+		to_chat(M, "<span class = 'warning'>Your flesh starts turning into dust.</span>")
+	..()
+
+/datum/reagent/medicine/brandmed/detoxoplasma
