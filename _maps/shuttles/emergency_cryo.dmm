@@ -1,0 +1,1309 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/template_noop,
+/area/template_noop)
+"ab" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape)
+"ad" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/escape)
+"aD" = (
+/obj/machinery/light/floor,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"bd" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"be" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/machinery/door/firedoor/window,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"bp" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 5
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"bu" = (
+/obj/machinery/atmospherics/pipe/manifold/general/visible{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"bD" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"bP" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Emergency Shuttle Airlock";
+	req_access_txt = "2"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"bR" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = -2;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = -3;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/obj/item/wrench/medical,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"bZ" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	dheight = 0;
+	dwidth = 15;
+	height = 20;
+	name = "Cere emergency shuttle";
+	width = 42
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"cl" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"cs" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = -2;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = -3;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/obj/item/wrench/medical,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"ct" = (
+/obj/machinery/door/firedoor/window,
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"cu" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"cx" = (
+/obj/machinery/atmospherics/pipe/manifold4w/general/visible,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"cy" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 6
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"cz" = (
+/obj/machinery/atmospherics/pipe/manifold4w/general/visible,
+/obj/machinery/light/floor,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"cB" = (
+/obj/machinery/light,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"cD" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/command/glass{
+	name = "Cockpit";
+	req_access_txt = "19"
+	},
+/obj/machinery/atmospherics/pipe/simple/general/visible,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"cE" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible,
+/obj/machinery/door/airlock/security/glass{
+	name = "Emergency Shuttle Brig";
+	req_access_txt = "2"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"cG" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible,
+/obj/machinery/door/airlock/medical/glass{
+	name = "Cryonics Control Room"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"cM" = (
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"cN" = (
+/obj/machinery/atmospherics/components/unary/cryo_cell{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"cQ" = (
+/obj/machinery/atmospherics/pipe/manifold/general/visible{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"cV" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"cX" = (
+/obj/machinery/atmospherics/pipe/manifold/general/visible{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"cZ" = (
+/obj/machinery/atmospherics/components/unary/cryo_cell{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"da" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"db" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"dc" = (
+/obj/machinery/atmospherics/pipe/simple/general/visible,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"dd" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"df" = (
+/obj/structure/table/glass,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"dg" = (
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"dj" = (
+/obj/machinery/computer/emergency_shuttle{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"dk" = (
+/obj/machinery/computer/card{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"dl" = (
+/obj/machinery/computer/communications{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"dn" = (
+/obj/machinery/atmospherics/components/unary/cryo_cell{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"do" = (
+/obj/machinery/atmospherics/components/unary/cryo_cell{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"dp" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"du" = (
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"dv" = (
+/obj/machinery/atmospherics/pipe/manifold4w/general/visible,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"dw" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"dx" = (
+/obj/structure/table/glass,
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = -2;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = -3;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/obj/item/wrench/medical,
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = 10;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"dy" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/shuttle/engine/heater,
+/turf/open/floor/plating/airless,
+/area/shuttle/escape)
+"dz" = (
+/obj/structure/shuttle/engine/propulsion,
+/turf/open/floor/plating/airless,
+/area/shuttle/escape)
+"dA" = (
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"eb" = (
+/obj/structure/table/glass,
+/obj/item/wrench/medical,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"ez" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"jG" = (
+/obj/structure/chair/office/light,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"mR" = (
+/obj/machinery/atmospherics/pipe/manifold/general/visible,
+/obj/structure/table/glass,
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = -10;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = -2;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = -3;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/glass/beaker/cryoxadone{
+	pixel_x = 10;
+	pixel_y = 4
+	},
+/obj/item/wrench/medical,
+/obj/machinery/light,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"Du" = (
+/obj/machinery/atmospherics/components/unary/cryo_cell,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"Ed" = (
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"GI" = (
+/obj/machinery/atmospherics/pipe/manifold/general/visible,
+/obj/machinery/light/floor,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"LM" = (
+/obj/machinery/atmospherics/pipe/manifold/general/visible,
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+"YO" = (
+/turf/open/floor/pod/dark,
+/area/shuttle/escape)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+"}
+(2,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+cZ
+dx
+YO
+cZ
+bd
+ab
+ab
+aa
+aa
+"}
+(3,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+be
+be
+be
+be
+be
+be
+be
+be
+bP
+be
+bZ
+dp
+ct
+ct
+ct
+ct
+cu
+ct
+cu
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ab
+Du
+LM
+YO
+YO
+da
+YO
+dl
+ab
+ab
+ab
+"}
+(4,1,1) = {"
+aa
+aa
+aa
+aa
+be
+be
+YO
+YO
+bd
+YO
+YO
+YO
+bd
+YO
+YO
+YO
+bd
+YO
+YO
+YO
+bd
+YO
+YO
+YO
+bd
+YO
+YO
+YO
+bd
+YO
+YO
+dp
+cZ
+da
+YO
+YO
+da
+jG
+dj
+ab
+dy
+dz
+"}
+(5,1,1) = {"
+aa
+aa
+aa
+aa
+be
+YO
+YO
+bR
+YO
+YO
+bR
+YO
+YO
+bR
+YO
+YO
+bR
+YO
+YO
+bR
+YO
+YO
+bR
+YO
+YO
+bR
+YO
+YO
+bR
+cy
+cV
+cD
+cx
+cx
+cQ
+cV
+LM
+jG
+dk
+ab
+dy
+dz
+"}
+(6,1,1) = {"
+aa
+aa
+aa
+be
+be
+YO
+YO
+Du
+bp
+YO
+Du
+bp
+YO
+Du
+bp
+YO
+Du
+bp
+YO
+Du
+bp
+YO
+Du
+bp
+YO
+Du
+bp
+YO
+Du
+LM
+YO
+dp
+cN
+dw
+cN
+YO
+cN
+dw
+dl
+ab
+dy
+dz
+"}
+(7,1,1) = {"
+aa
+aa
+aa
+be
+aD
+YO
+YO
+Du
+GI
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+Du
+LM
+cB
+ab
+ez
+ez
+ez
+ez
+ez
+ez
+ez
+ab
+dy
+dz
+"}
+(8,1,1) = {"
+aa
+aa
+aa
+be
+YO
+YO
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+dp
+dn
+db
+dA
+dn
+db
+dA
+dn
+ab
+dy
+dz
+"}
+(9,1,1) = {"
+aa
+aa
+aa
+be
+YO
+aD
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+Du
+LM
+YO
+Du
+cz
+cV
+cE
+dv
+dc
+dc
+dv
+dc
+dc
+mR
+ab
+dy
+dz
+"}
+(10,1,1) = {"
+aa
+aa
+aa
+be
+YO
+YO
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+dp
+do
+dd
+dA
+do
+dd
+dA
+do
+ad
+ad
+ad
+"}
+(11,1,1) = {"
+aa
+aa
+aa
+be
+YO
+YO
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+ab
+dp
+dp
+dp
+dp
+dp
+dp
+dp
+ad
+ad
+ad
+"}
+(12,1,1) = {"
+aa
+aa
+aa
+be
+YO
+aD
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+ab
+ab
+Ed
+Ed
+Ed
+Ed
+Ed
+ab
+ab
+dy
+dz
+"}
+(13,1,1) = {"
+aa
+aa
+aa
+be
+YO
+YO
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+ab
+cM
+cx
+cX
+cX
+cX
+cx
+du
+ab
+dy
+dz
+"}
+(14,1,1) = {"
+aa
+aa
+aa
+be
+aD
+YO
+YO
+Du
+GI
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+Du
+LM
+YO
+Du
+GI
+YO
+Du
+LM
+cB
+ab
+cM
+LM
+eb
+YO
+df
+bu
+du
+ab
+dy
+dz
+"}
+(15,1,1) = {"
+aa
+aa
+aa
+be
+be
+YO
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+Du
+LM
+YO
+dp
+cM
+LM
+df
+YO
+df
+bu
+du
+ab
+dy
+dz
+"}
+(16,1,1) = {"
+aa
+aa
+aa
+aa
+be
+YO
+YO
+YO
+bu
+cQ
+cV
+cx
+cQ
+cV
+cx
+cQ
+cV
+cx
+cQ
+cV
+cx
+cQ
+cV
+cx
+cQ
+cV
+cx
+cQ
+cV
+cx
+cQ
+cG
+cV
+LM
+df
+YO
+df
+bu
+du
+ab
+dy
+dz
+"}
+(17,1,1) = {"
+aa
+aa
+aa
+aa
+be
+be
+YO
+bR
+bD
+cl
+bR
+cl
+bD
+bR
+cl
+cl
+cs
+cl
+cl
+bR
+bD
+cl
+bR
+cl
+bD
+bR
+cl
+cl
+cs
+cl
+cl
+dp
+cM
+LM
+df
+YO
+df
+bu
+du
+ab
+dy
+dz
+"}
+(18,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+be
+be
+be
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ct
+ab
+cM
+cx
+cQ
+cQ
+cQ
+cx
+du
+ab
+ab
+ab
+"}
+(19,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+dg
+dg
+dg
+dg
+dg
+ab
+ab
+aa
+aa
+"}
+(20,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+aa
+aa
+aa
+"}
