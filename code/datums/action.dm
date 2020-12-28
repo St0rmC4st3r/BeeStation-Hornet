@@ -416,6 +416,9 @@
 	check_flags = NONE
 	name = "Activate Explosive Implant"
 
+/datum/action/item_action/hazard_implant
+	name = "Put on your Internals and Skinsuit"
+
 /datum/action/item_action/toggle_research_scanner
 	name = "Toggle Research Scanner"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
